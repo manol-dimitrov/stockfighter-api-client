@@ -3,6 +3,7 @@ package org.stockfighter.client.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.stockfighter.client.domain.Quote;
 import org.stockfighter.client.domain.Stock;
@@ -20,8 +21,8 @@ public class QuoteService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public Quote getLatestQuote(Venue venue, Stock stock) {
-        Quote latestQuote = restTemplate.getForObject("https://api.stockfighter.io/ob/api/venues/" + venue.getSymbol() + "/stocks/" + stock.getSymbol() + "/quote", Quote.class);
-        return latestQuote;
+    public Quote getLatestQuote(Venue venue, Stock stock) throws RestClientException {
+        return restTemplate.getForObject("https://api.stockfighter.io/ob/api/venues/" + venue.getSymbol() + "/stocks/" + stock.getSymbol() + "/quote", Quote.class);
     }
+
 }

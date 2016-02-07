@@ -9,8 +9,8 @@ import java.util.List;
  * Created by Manol on 31/01/2016.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public @Data
-class Orderbook {
+@Data
+public class Orderbook {
     private Venue venue;
     private String symbol;
     private List<Bid> bidList;
