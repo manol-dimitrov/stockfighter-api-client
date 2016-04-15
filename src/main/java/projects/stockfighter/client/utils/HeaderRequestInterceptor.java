@@ -1,4 +1,4 @@
-package org.stockfighter.client.utils;
+package projects.stockfighter.client.utils;
 
 import org.springframework.http.HttpRequest;
 import org.springframework.http.client.ClientHttpRequestExecution;

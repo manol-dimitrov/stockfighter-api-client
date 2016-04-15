@@ -1,13 +1,13 @@
-package org.stockfighter.client.service;
+package projects.stockfighter.client.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-import org.stockfighter.client.domain.Quote;
-import org.stockfighter.client.domain.Stock;
-import org.stockfighter.client.domain.Venue;
+import projects.stockfighter.client.domain.Quote;
+import projects.stockfighter.client.domain.Stock;
+import projects.stockfighter.client.domain.Venue;
 
 /**
  * Created by Manol on 31/01/2016.

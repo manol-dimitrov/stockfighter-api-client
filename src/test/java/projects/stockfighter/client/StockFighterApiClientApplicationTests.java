@@ -1,4 +1,4 @@
-package org.stockfighter.client;
+package projects.stockfighter.client;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,7 +8,7 @@ import org.springframework.boot.test.TestRestTemplate;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.stockfighter.client.configuration.TestConfiguration;
+import projects.stockfighter.client.configuration.TestConfiguration;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasToString;

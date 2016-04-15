@@ -1,4 +1,4 @@
-package org.stockfighter.client.domain;
+package projects.stockfighter.client.domain;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package org.stockfighter.client.domain;
+package projects.stockfighter.client.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;

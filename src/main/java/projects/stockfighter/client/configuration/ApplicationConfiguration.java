@@ -1,23 +1,31 @@
-package org.stockfighter.client.configuration;
+package projects.stockfighter.client.configuration;
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.web.client.RestTemplate;
-import org.stockfighter.client.utils.HeaderRequestInterceptor;
+import projects.stockfighter.client.utils.HeaderRequestInterceptor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Manol on 31/01/2016.
- */
-@org.springframework.context.annotation.Configuration
-public class Configuration {
+@Configuration
+@EnableAutoConfiguration
+@PropertySource("classpath:application.properties")
+public class ApplicationConfiguration {
 
     private final static String API_KEY = "c457e5bbfbd2d18cc9814f2cf9a399c98dc2a809";
 
     private List<ClientHttpRequestInterceptor> interceptors;
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
     public List<ClientHttpRequestInterceptor> initialiseHttpInterceptors() {
         interceptors = new ArrayList<>();
