@@ -18,11 +18,15 @@ public class QuoteService {
     @Value(value = "api-key")
     private String apiKey;
 
+    @Value(value = "venues")
+    private String venuesUri;
+
     @Autowired
     private RestTemplate restTemplate;
 
     public Quote getLatestQuote(Venue venue, Stock stock) throws RestClientException {
-        return restTemplate.getForObject("https://api.stockfighter.io/ob/api/venues/" + venue.getSymbol() + "/stocks/" + stock.getSymbol() + "/quote", Quote.class);
+        String url = venuesUri + venue.getSymbol() + "/stocks/" + stock.getSymbol() + "/quote";
+        return restTemplate.getForObject(url, Quote.class);
     }
 
 }

@@ -12,7 +12,6 @@ import org.stockfighter.client.configuration.TestConfiguration;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasToString;
-import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TestConfiguration.class)
@@ -24,9 +23,10 @@ public class StockFighterApiClientApplicationTests {
     @Test
     public void shouldReturnOkWhenStockFighterApiIsUp() {
         HttpHeaders httpHeaders = restTemplate.getForEntity("https://api.stockfighter.io/ob/api/heartbeat", String.class).getHeaders();
-        httpHeaders.entrySet().stream().forEach(stringListEntry -> System.out.println(stringListEntry.getKey()));
 
+        httpHeaders.entrySet().stream().forEach(stringListEntry -> System.out.println(stringListEntry.getKey()));
         ResponseEntity<String> responseEntity = restTemplate.getForEntity("https://api.stockfighter.io/ob/api/heartbeat", String.class);
-        assertThat(responseEntity.getBody(),hasToString("{\"ok\":true,\"error\":\"\"}"));
+
+        assertThat(responseEntity.getBody(), hasToString("{\"ok\":true,\"error\":\"\"}"));
     }
 }

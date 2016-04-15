@@ -35,8 +35,8 @@ public class QuoteServiceTest {
 
     @Test
     public void shouldGetLatestQuoteForStock() {
-        when(stock.getSymbol()).thenReturn("HFSC");
-        when(venue.getSymbol()).thenReturn("TFEX");
+        when(stock.getSymbol()).thenReturn("SDS");
+        when(venue.getSymbol()).thenReturn("BAIMEX");
         Quote expected = quoteService.getLatestQuote(venue, stock);
         assertNotNull(expected);
     }

@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.web.client.RestTemplate;
+import org.stockfighter.client.utils.HeaderRequestInterceptor;
 
 import java.util.ArrayList;
 import java.util.List;
